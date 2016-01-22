@@ -1,0 +1,22 @@
+<h1>Subscribers</h1>
+
+<br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+  </tr>
+ 
+  <% @newsletter.each do |newsletter| %>
+    <tr>
+      <td><%= newsletter.newsname %></td>
+      <td><%= newsletter.newsemail %></td>
+      <td><%= link_to 'Destroy', newsletter_path(newsletter),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<br>
+<%= link_to 'New Subscriber', new_newsletter_path %> |
+<%= link_to 'Home', root_path %>
